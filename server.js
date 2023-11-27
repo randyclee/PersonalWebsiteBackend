@@ -16,7 +16,7 @@ database.once('connected', () => {
 });
 
 // Allowed CORS origins
-const allowedOrigins = ["https://randyclee.com", "http://localhost:3000", "https://main.d2fh87xcg3brzi.amplifyapp.com"];
+const allowedOrigins = ["https://randyclee.com", "https://www.randyclee.com", "http://localhost:3000", "https://main.d2fh87xcg3brzi.amplifyapp.com"];
 
 // CORS options
 var corsOptions = {
