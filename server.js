@@ -15,9 +15,18 @@ database.once('connected', () => {
     console.log('Database Connected');
 });
 
-// Set up CORS
+// Allowed CORS origins
+const allowedOrigins = ["https://randyclee.com", "http://localhost:3000", "https://main.d2fh87xcg3brzi.amplifyapp.com"];
+
+// CORS options
 var corsOptions = {
-    origin: "http://localhost:3000"
+    origin: function (origin, callback) {
+        if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    }
 };
 
 const app = express();
