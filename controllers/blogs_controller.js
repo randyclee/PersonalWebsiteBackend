@@ -100,7 +100,7 @@ exports.updateBlog = async (req, res) => {
 
     try {
         // Retrieve the existing blog document from the database
-        let blog = await BlogModel.findOne({_id: id});
+        let blog = await BlogModel.findById(id);
         
         if (!blog) {
             return res.status(404).send('Blog not found');
